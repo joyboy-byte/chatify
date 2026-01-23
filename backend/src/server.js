@@ -6,6 +6,7 @@ import messageRoutes from "./routes/message.route.js"
 import path from "path";
 import { connectDB } from "./lib/db.js";
 import { ENV } from "./lib/env.js";
+import cors from "cors";
 
 
 
@@ -19,7 +20,7 @@ app.use(express.json()) //req.body
 app.use(cookieParser())
 
 app.use("/api/auth", authRoutes)
-app.use("/api/message", messageRoutes);
+app.use("/api/messages", messageRoutes);
 
 
 // make ready for deployment
