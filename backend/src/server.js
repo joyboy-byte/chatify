@@ -17,6 +17,7 @@ const PORT = ENV.PORT || 3000
 
 app.use(express.json()) //req.body
 // we have to use it here. But if we delete this part, the signup function present it the auth.controller.js gets undefined
+app.use(cors({origin:ENV.CLIENT_URL, credentials:true}))
 app.use(cookieParser())
 
 app.use("/api/auth", authRoutes)
