@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 export const useChatStore = create((set, get) => ({
     allContacts: [],
     chats: [],
-    message: [],
+    messages: [],
     activeTab: "chats",
     selectedUser: null,
     isUsersLoading: false,
@@ -23,7 +23,7 @@ export const useChatStore = create((set, get) => ({
     getAllContacts: async() => {
         set({isUsersLoading: true});
         try {
-            const res = await axiosInstance.get('/message/contacts');
+            const res = await axiosInstance.get('/messages/contacts');
             set ({ allContacts: res.data });
         } catch (error) {
             toast.error(error.response.data.message);
@@ -34,7 +34,7 @@ export const useChatStore = create((set, get) => ({
     getMyChatPartners: async() => {
         set({ isUsersLoading:true });
         try {
-            const res = await axiosInstance.get('/message/chats');
+            const res = await axiosInstance.get('/messages/chats');
             set({ chats: res.data });
         } catch (error) {
             toast.error(error.response.data.message);
