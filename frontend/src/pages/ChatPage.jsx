@@ -10,7 +10,7 @@ import ActiveTabSwitch from '../components/ActiveTabSwitch';
 import ProfileHeader from '../components/ProfileHeader';
 
 function ChatPage() {
-  const { activeTab, selectedUser } = useChatStore;
+  const { activeTab, selectedUser } = useChatStore();
   return (
     <div className='relative w-full max-w-6xl h-[800px]' >
 
