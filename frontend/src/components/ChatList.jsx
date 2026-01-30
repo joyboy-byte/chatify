@@ -6,7 +6,7 @@ import NoChatsFound from './NoChatsFound';
 function ChatList() {
   const { getMyChatPartners, chats, isUsersLoading, setSelectedUser } = useChatStore();
   useEffect(() => {
-    getMyChatPartners
+    getMyChatPartners()
   }, [getMyChatPartners])
 
   if (isUsersLoading) return <UsersLoadingSkeleton />
