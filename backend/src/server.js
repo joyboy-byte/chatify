@@ -12,7 +12,9 @@ import { app, server } from "./lib/socket.js"
 
 const __dirname = path.resolve();
 
-const PORT = ENV.PORT || 3000
+// const PORT = ENV.PORT || 3000
+const PORT = process.env.PORT || ENV.PORT || 3000;
+
 
 app.use(express.json({limit: "5mb"})) //req.body
 // we have to use it here. But if we delete this part, the signup function present it the auth.controller.js gets undefined
